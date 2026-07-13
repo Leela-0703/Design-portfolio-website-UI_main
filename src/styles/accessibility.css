@@ -1,0 +1,108 @@
+/**
+ * Accessibility Styles
+ * WCAG 2.1 Level AA Compliance
+ * Validates: Requirements 15.3, 15.5, 15.6
+ */
+
+/* Global focus indicators - 2px minimum outline */
+*:focus-visible {
+  outline: 2px solid #3B82F6; /* brandBlue */
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Button-specific focus styling with ring */
+button:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+}
+
+/* Link focus styling */
+a:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+}
+
+/* Input focus styling */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+}
+
+/* Skip link styling - sr-only by default, visible on focus */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #3B82F6; /* brandBlue */
+  color: white;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  z-index: 100;
+  border-radius: 0 0 8px 0;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.skip-link:focus-visible {
+  top: 0;
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* Screen reader only class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Screen reader only - visible on focus */
+.sr-only-focusable:focus-visible {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Reduced motion support - disable animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+  *:focus-visible {
+    outline-width: 3px;
+    outline-offset: 3px;
+  }
+}
+
+/* Focus visible ring utilities for Tailwind */
+.ring-focus {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+}
+
+.ring-focus-offset {
+  outline-offset: 2px;
+}
