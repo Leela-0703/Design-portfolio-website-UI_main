@@ -115,7 +115,7 @@ export function About() {
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-3xl blur-3xl" />
               <div className="relative aspect-square rounded-3xl overflow-hidden border-4 border-purple-500/30">
                 <img
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b21hbiUyMHBvcnRyYWl0JTIwd29ya3NwYWNlfGVufDF8fHx8MTc4MTc4NTg1OHww&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="public/assets/IMG_20240405_113545_432.jpg"
                   alt="Leela Sri Harshini"
                   className="w-full h-full object-cover"
                 />
