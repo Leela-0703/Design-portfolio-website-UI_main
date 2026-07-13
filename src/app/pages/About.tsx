@@ -115,7 +115,7 @@ export function About() {
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-3xl blur-3xl" />
               <div className="relative aspect-square rounded-3xl overflow-hidden border-4 border-purple-500/30">
                 <img
-                  src="public/assets/IMG_20240405_113545_432.jpg"
+                  src="/assets/IMG_20240405_113545_432.jpg"
                   alt="Leela Sri Harshini"
                   className="w-full h-full object-cover"
                 />
