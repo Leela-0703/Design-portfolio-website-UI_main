@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { ArrowDown } from 'lucide-react';
 import { Link } from 'react-router';
+import SplineDiamond from "./splinediamond";
 
 export function HeroSection() {
   const [logoAnimationComplete, setLogoAnimationComplete] = useState(false);
@@ -113,64 +114,82 @@ export function HeroSection() {
 
         {/* Main Hero Content */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: logoAnimationComplete ? 1 : 0, y: logoAnimationComplete ? 0 : 30 }}
-          transition={{ duration: 1 }}
-          className="max-w-4xl mx-auto text-center space-y-12"
-        >
-          <div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl mb-6">
-              Leela Sri Harshini
-            </h1>
-            <div className="flex flex-wrap justify-center gap-3 md:gap-4 text-lg md:text-xl text-muted-foreground mb-8">
-              <span className="px-4 py-2 bg-purple-500/10 border border-purple-500/30 rounded-full">
-                UI/UX Designer
-              </span>
-              <span className="px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-full">
-                Brand Designer
-              </span>
-              <span className="px-4 py-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full">
-                  Illustrator
-              </span>
-              <span className="px-4 py-2 bg-purple-500/10 border border-purple-500/30 rounded-full">
-                  Campaign Designer
-              </span>
-            </div>
-            <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
-              Designing work that connects clarity, creativity, and purposeful communication across digital and print media.
-            </p>
+        initial={{ opacity: 0, y: 30 }}
+        animate={{
+          opacity: logoAnimationComplete ? 1 : 0,
+          y: logoAnimationComplete ? 0 : 30,
+        }}
+        transition={{ duration: 1 }}
+        className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center"
+      >
+        {/* Left Content */}
+        <div className="space-y-8 text-center lg:text-left">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl">
+            Leela Sri Harshini
+          </h1>
+
+          <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
+            <span className="px-4 py-2 bg-purple-500/10 border border-purple-500/30 rounded-full">
+              UI/UX Designer
+            </span>
+
+            <span className="px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-full">
+              Brand Designer
+            </span>
+
+            <span className="px-4 py-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full">
+              Illustrator
+            </span>
+
+            <span className="px-4 py-2 bg-purple-500/10 border border-purple-500/30 rounded-full">
+              Campaign Designer
+            </span>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap justify-center gap-6">
+          <p className="text-xl text-foreground/80 leading-relaxed">
+            Designing work that connects clarity, creativity, and purposeful communication across digital and print media.
+          </p>
+
+          <div className="flex flex-wrap gap-5 justify-center lg:justify-start">
             <Link to="/#projects">
               <motion.button
-                className="px-8 py-4 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 text-white rounded-full font-medium text-lg hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 rounded-full text-white"
               >
                 View Featured Work
               </motion.button>
             </Link>
+
             <Link to="/about">
               <motion.button
-                className="px-8 py-4 border border-foreground/20 rounded-full font-medium text-lg hover:bg-foreground/5 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 border border-white/20 rounded-full"
               >
                 About Me
               </motion.button>
             </Link>
+
             <Link to="/contact">
               <motion.button
-                className="px-8 py-4 border border-foreground/20 rounded-full font-medium text-lg hover:bg-foreground/5 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 border border-white/20 rounded-full"
               >
-                Get in Touch
+                Contact
               </motion.button>
             </Link>
           </div>
+        </div>
+
+        {/* Right Content */}
+        <div className="flex justify-center">
+          <div className="w-full max-w-[550px] aspect-square">
+            <SplineDiamond />
+          </div>
+        </div>
+         
         </motion.div>
 
         {/* Scroll Indicator */}
