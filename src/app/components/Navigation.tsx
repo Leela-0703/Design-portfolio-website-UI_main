@@ -50,17 +50,7 @@ export function Navigation() {
                   <SplineDiamond />
               </div>
 
-              <span
-                  className="text-xl font-medium"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                  INK
-                  <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-700 bg-clip-text text-transparent">
-                      &amp;
-                  </span>
-                  IMAGINATION
-              </span>
-
+          
             </div>
                 <span className="text-xl font-medium" style={{ fontFamily: "'Playfair Display', serif" }}>
                   INK<span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-700 bg-clip-text text-transparent">&amp;</span>IMAGINATION
