@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Download } from 'lucide-react';
+import SplineDiamond from "./splinediamond";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,43 +44,24 @@ export function Navigation() {
             <Link to="/" className="relative group">
               <div className="flex items-center gap-3">
                 {/* 3D Blue Diamond */}
-                <motion.svg
-                  width="32"
-                  height="38"
-                  viewBox="0 0 32 38"
-                  animate={{ rotateY: 360 }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                  style={{ transformStyle: "preserve-3d" }}
-                >
-                  <defs>
-                    <linearGradient id="nav-diamond-top" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#93c5fd" stopOpacity="1" />
-                      <stop offset="50%" stopColor="#3b82f6" stopOpacity="1" />
-                      <stop offset="100%" stopColor="#1d4ed8" stopOpacity="1" />
-                    </linearGradient>
-                    <linearGradient id="nav-diamond-bot" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#1d4ed8" stopOpacity="1" />
-                      <stop offset="100%" stopColor="#1e3a8a" stopOpacity="1" />
-                    </linearGradient>
-                    <filter id="nav-glow">
-                      <feGaussianBlur stdDeviation="1.5" result="blur" />
-                      <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
-                    </filter>
-                  </defs>
-                  {/* Crown */}
-                  <polygon points="16,1 4,14 28,14" fill="url(#nav-diamond-top)" filter="url(#nav-glow)" />
-                  {/* Pavilion */}
-                  <polygon points="4,16 28,16 16,37" fill="url(#nav-diamond-bot)" filter="url(#nav-glow)" />
-                  {/* Girdle */}
-                  <rect x="4" y="14" width="24" height="2" fill="#60a5fa" />
-                  {/* Highlight */}
-                  <polygon points="16,3 8,12 16,9" fill="white" opacity="0.35" />
-                  {/* Sparkle */}
-                  <motion.circle cx="10" cy="8" r="1.2" fill="white" opacity="0.9"
-                    animate={{ opacity: [0.9, 0.2, 0.9] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  />
-                </motion.svg>
+            <div className="flex items-center gap-3">
+
+              <div className="w-10 h-10 flex-shrink-0">
+                  <SplineDiamond />
+              </div>
+
+              <span
+                  className="text-xl font-medium"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                  INK
+                  <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-700 bg-clip-text text-transparent">
+                      &amp;
+                  </span>
+                  IMAGINATION
+              </span>
+
+            </div>
                 <span className="text-xl font-medium" style={{ fontFamily: "'Playfair Display', serif" }}>
                   INK<span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-700 bg-clip-text text-transparent">&amp;</span>IMAGINATION
                 </span>

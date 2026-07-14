@@ -69,7 +69,7 @@ export function HeroSection() {
               className="text-7xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 bg-clip-text text-transparent"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              &amp;
+            
             </motion.div>
 
             <motion.div
